@@ -25,7 +25,7 @@ How To
 ------
 PyReduce can be run using the provided example file:
 ``examples/micado_example.py``.
-In this example script, we define first define the instrument and instrument mode (if applicable). Then the path to where the data are locaed is inserted as well as the output directory. Lastly, all the specific settings of the reduction (e.g. polynomial degrees of various fits) are defined in json configuration file [settings_MICADO.json](https://github.com/nadsabha/PyReduce_MICADO/blob/master/pyreduce/settings/settings_MICADO.json) or alternatively directly within the script by adding, e.g. config["curvature"]["extraction_width"] = 0.14, config["wavecal"]["dimensionality"] = "2D", etc. 
+In this example script, we first define the instrument and instrument mode (if applicable). Then the path to where the data are locaed is inserted as well as the output directory. Lastly, all the specific settings of the reduction (e.g. polynomial degrees of various fits) are defined in json configuration file [settings_MICADO.json](https://github.com/nadsabha/PyReduce_MICADO/blob/master/pyreduce/settings/settings_MICADO.json) or alternatively directly within the script by adding, e.g. config["curvature"]["extraction_width"] = 0.14, config["wavecal"]["dimensionality"] = "2D", etc. 
 
 The steps of the reduction to be  performed are then defined. Steps that are not specified, but are still required, will be loaded from previous runs if possible, or executed otherwise.
 All of this is then passed to pyreduce.reduce.main to start the reduction.
