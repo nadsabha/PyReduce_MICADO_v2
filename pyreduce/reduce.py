@@ -305,7 +305,7 @@ class Mask(Step):
         try:
             mask, _ = self.instrument.load_fits(mask_file, self.mode, extension=0)
             mask = ~mask.data.astype(bool)  # REDUCE mask are inverse to numpy masks
-        except (FileNotFoundError, ValueError):
+        except (FileNotFoundError, ValueError): # NBS: changed from FileNotFoundError
             logger.error(
                 "Bad Pixel Mask datafile %s not found. Using all pixels instead.",
                 mask_file,
@@ -580,9 +580,12 @@ class OrderTracing(Step):
             plot_title=self.plot_title,
         )
 
-        self.save(orders, column_range)
 
-        return orders, column_range
+        orders=orders[3::7] #NBS: micado det1 fix
+
+        self.save(orders, column_range) 
+
+        return orders, column_range 
 
     def save(self, orders, column_range):
         """Save order tracing results to disk
@@ -932,6 +935,8 @@ class WavelengthCalibration(Step):
             shift_window=self.shift_window,
             element=thead["e_wavecal_element"],
         )
+        # print("!!!(NBS) CHECK thar, linelist:", thar, linelist)
+
         wave, coef = module.execute(thar, linelist)
         self.save(wave, thar, coef, linelist)
         return wave, thar, coef, linelist
