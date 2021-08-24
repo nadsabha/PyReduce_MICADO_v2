@@ -17,7 +17,7 @@
         "min_width": 0
     },
     "scatter": {
-        "bias_scaling": "exposure_time",
+        "bias_scaling": "number_of_files",
         "extraction_width": 0.45,
         "border_width": 20
     },
@@ -32,7 +32,7 @@
     "curvature": {
         "dimensionality": "2D",
         "curv_degree": 1,
-        "extraction_width": 0.14,
+        "extraction_width": 0.14235,
         "extraction_cutoff": 20,
         "peak_threshold": 10,
         "degree": [
@@ -43,20 +43,20 @@
     "wavecal": {
         "extraction_method": "arc",
         "bias_scaling": "number_of_files",
-        "threshold": 100,
+        "threshold": 80,
         "iterations": 3,
         "dimensionality": "2D",
-        "extraction_width": 0.14,
+        "extraction_width": 0.14235,
         "degree": [
-            3,
-            5
+            4,
+            6
         ],
         "manual": true,
         "shift_window": 1
     },
     "science": {
         "oversampling": 10,
-        "extraction_width": 0.14,
+        "extraction_width": 0.14235,
         "swath_width": 400,
         "smooth_slitfunction": 2,
         "smooth_spectrum": 0.5e-5
