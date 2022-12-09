@@ -7,8 +7,8 @@
         "degree": 5,
         "degree_before_merge": "best",
         "bias_scaling": "exposure_time",
-        "filter_size": 3000,
-        "min_cluster": 1000,
+        "filter_size": 300,
+        "min_cluster": 500,
         "noise": 100,
         "border_width": 5,
         "auto_merge_threshold": 0.9,
@@ -32,9 +32,9 @@
     "curvature": {
         "dimensionality": "2D",
         "curv_degree": 1,
-        "extraction_width": 0.14235,
-        "extraction_cutoff": 20,
-        "peak_threshold": 10,
+        "extraction_width": 360,
+        "extraction_cutoff": 10,
+        "peak_threshold": 5,
         "degree": [
             1,
             1
@@ -46,7 +46,7 @@
         "threshold": 80,
         "iterations": 3,
         "dimensionality": "2D",
-        "extraction_width": 0.14235,
+        "extraction_width": 360,
         "degree": [
             4,
             6
