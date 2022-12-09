@@ -1,6 +1,6 @@
 """
 Simple usage example for PyReduce
-Loads a simulated MICADO dataset, and runs the full extraction
+Loads a ScopeSim simulated MICADO dataset (with updated spectral layout and updated line lists), and runs the full extraction. 
 """
 
 import os.path
@@ -21,7 +21,7 @@ steps = (
      # # "scatter",
      # "norm_flat", 
      "wavecal",
-     "science",
+     # "science",
      # "continuum",
      # "finalize",
 )
@@ -31,12 +31,13 @@ steps = (
 # Feel free to change this to your own preference, values in curly brackets will be replaced with the actual values {}
 
 # Define the path for the base, input and output directories
-# The data can be fetched from https://www.dropbox.com/sh/jkqgahwiypy4gd2/AABsDgdf3yP3JxvDMq1wYffxa?dl=0 and stored in /raw/
+# The data (with fixed header keywords) can be fetched from https://www.dropbox.com/sh/e3lnvtkmyjveajk/AABPHxeUdDO5AnkWCAjbM0e1a?dl=0 and stored in input_dir
 
-base_dir = "/Users/Nadeen/Dropbox/WORKING/iMICADO/Working/WORKING_PyReduce/DATA/datasets/MICADO/" # an example path which you should change to your prefereed one 
+#PC
+base_dir ="/media/data/Dropbox/Dropbox/WORKING/iMICADO/Working/WORKING_PyReduce/DATA/datasets/MICADO/raw_new/"# an example path which you should change to your prefereed one 
 
-input_dir = "raw/"
-output_dir = "reduced/"
+input_dir = "HK/"
+output_dir = "reduced_new/"
 
 config = pyreduce.configuration.get_configuration_for_instrument(instrument, plot=1)
 
@@ -46,9 +47,9 @@ config = pyreduce.configuration.get_configuration_for_instrument(instrument, plo
 
 
 # config["orders"]["noise"] = 100
-# config["curvature"]["extraction_width"] = 0.14 
-# config["wavecal"]["extraction_width"] = 0.14
-# config["science"]["extraction_width"] = 0.14
+# config["curvature"]["extraction_width"] = 360 
+# config["wavecal"]["extraction_width"] = 360
+# config["science"]["extraction_width"] = 360
 
 
 pyreduce.reduce.main(
