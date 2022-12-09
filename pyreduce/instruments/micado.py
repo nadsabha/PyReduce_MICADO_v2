@@ -35,7 +35,7 @@ class MICADO(Instrument):
         return header
 
     def get_extension(self, header, mode):
-        extension=1
+        extension=5
 
         return extension
 
@@ -44,7 +44,7 @@ class MICADO(Instrument):
         # info = self.load_info()
         cwd = os.path.dirname(__file__)
         # fname = f"xshooter_{mode.lower()}.npz"
-        fname = f"micado_IJ_2D_det1.npz"
+        fname = f"HK_3arcsec_chip5.npz" #f"HK_3arcsec_chip5.npz" # f"micado_IJ_2D_det1.npz"
         fname = os.path.join(cwd, "..", "wavecal", fname)
 
 
