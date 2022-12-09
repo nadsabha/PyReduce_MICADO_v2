@@ -580,9 +580,14 @@ class OrderTracing(Step):
             plot_title=self.plot_title,
         )
 
+        # print('#NBS:here i am')
+        print(orders.shape) #NBS
+        orders=orders[3] #NBS: micado fix if only 1 order on the detector, use [3::7] if 2 orders present 
+        print(orders.shape) #NBS
+        orders = orders.reshape((1, 6))#NBS: micado fix if only 1 order on the detector, not needed if 2 orders
+        print(orders.shape) #NBS
 
-        orders=orders[3::7] #NBS: micado det1 fix
-
+        
         self.save(orders, column_range) 
 
         return orders, column_range 
