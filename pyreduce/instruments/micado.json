@@ -43,7 +43,7 @@
     "kw_comb": null,
     "kw_spec": "HIERARCH ESO DPR TYPE",
     "id_bias": "DARK",
-    "id_flat": "SFLAT",
+    "id_flat": "SFLATSLIT",
     "id_orders": "SFLAT_PINH",
     "id_curvature": "WAVE",
     "id_scatter": "LAMP,FLAT",
